@@ -24,6 +24,14 @@ public class CuentaRequest implements Serializable{
 		super();
 	}
 	
+	public CuentaRequest(BigInteger idCliente, BigInteger numeroCuenta, String tipoCuenta, Integer estado) {
+		super();
+		this.idCliente = idCliente;
+		this.numeroCuenta = numeroCuenta;
+		this.tipoCuenta = tipoCuenta;
+		this.estado = estado;
+	}
+
 	public BigInteger getIdCliente() {
 		return idCliente;
 	}

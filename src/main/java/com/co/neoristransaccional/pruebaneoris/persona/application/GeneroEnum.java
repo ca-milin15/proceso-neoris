@@ -2,7 +2,7 @@ package com.co.neoristransaccional.pruebaneoris.persona.application;
 
 import java.util.Arrays;
 
-import com.co.neoristransaccional.pruebaneoris.persona.domain.exception.GeneroEnumNotFound;
+import com.co.neoristransaccional.pruebaneoris.persona.domain.exception.GeneroEnumNotFoundRuntimeException;
 
 public enum GeneroEnum {
 	
@@ -20,7 +20,7 @@ public enum GeneroEnum {
 	public static GeneroEnum buscarEnumPorCodigo(String codigo, String mensajeError) {
 		return Arrays.asList(GeneroEnum.values()).stream()
 				.filter(estado -> estado.getCodigo().equals(codigo))
-				.findFirst().orElseThrow(() -> new GeneroEnumNotFound(mensajeError));
+				.findFirst().orElseThrow(() -> new GeneroEnumNotFoundRuntimeException(mensajeError));
 	}
 	
 	public String getCodigo() {

@@ -1,10 +1,10 @@
 package com.co.neoristransaccional.pruebaneoris.persona.domain.exception;
 
-public class GeneroEnumNotFound extends RuntimeException{
+public class GeneroEnumNotFoundRuntimeException extends RuntimeException{
 
 	private static final long serialVersionUID = -3483991194838858629L;
 
-	public GeneroEnumNotFound(String message) {
+	public GeneroEnumNotFoundRuntimeException(String message) {
 		super(message);
 	}
 

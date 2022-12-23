@@ -9,7 +9,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseEntityExcep
 import com.co.neoristransaccional.pruebaneoris.cliente.domain.exceptions.ClienteNotFoundRuntimeException;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.exceptions.CuentaNotFoundRuntimeException;
 import com.co.neoristransaccional.pruebaneoris.movimiento.domain.exceptions.MovimientoReporteSinDatosRuntimeException;
-import com.co.neoristransaccional.pruebaneoris.persona.domain.exception.GeneroEnumNotFound;
+import com.co.neoristransaccional.pruebaneoris.persona.domain.exception.GeneroEnumNotFoundRuntimeException;
 import com.co.neoristransaccional.pruebaneoris.shared.application.ControllerAdviceResponse;
 
 @org.springframework.web.bind.annotation.ControllerAdvice
@@ -33,7 +33,7 @@ public class ControllerAdvice extends ResponseEntityExceptionHandler{
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.CONFLICT);
 	}
 	
-	@ExceptionHandler(GeneroEnumNotFound.class)
+	@ExceptionHandler(GeneroEnumNotFoundRuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> generoEnumNotFound(RuntimeException ex, WebRequest request){
 		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.CONFLICT);

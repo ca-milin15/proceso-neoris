@@ -8,6 +8,17 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class ClienteRequest implements Serializable {
 
+	public ClienteRequest(String nombre, String genero, int edad, String identificacion, String direccion,
+			String telefono, String contrasena) {
+		super();
+		this.nombre = nombre;
+		this.genero = genero;
+		this.edad = edad;
+		this.identificacion = identificacion;
+		this.direccion = direccion;
+		this.telefono = telefono;
+		this.contrasena = contrasena;
+	}
 	private static final long serialVersionUID = 7604324755192963598L;
 	
 	String nombre;

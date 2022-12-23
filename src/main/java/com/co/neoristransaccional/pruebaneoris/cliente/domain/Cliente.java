@@ -63,6 +63,12 @@ public class Cliente extends EntidadGeneral {
 		super();
 	}
 
+	public Cliente(String contrasena, EstadoEnum estado) {
+		super();
+		this.contrasena = contrasena;
+		this.estado = estado;
+	}
+
 	public Cliente(ClienteRequest clienteRequest, Persona persona) {
 		super();
 		this.persona = persona;
