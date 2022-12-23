@@ -1,0 +1,190 @@
+{
+	"info": {
+		"_postman_id": "9d368b72-6353-4ef2-b665-85fdf03d7233",
+		"name": "Neoris",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "1200750"
+	},
+	"item": [
+		{
+			"name": "Cliente",
+			"item": [
+				{
+					"name": "POST-clientes",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\": \"Camilo\",\r\n    \"genero\": \"M\",\r\n    \"edad\": 29,\r\n    \"identificacion\": \"12345\",\r\n    \"direccion\": \"Cra 83\",\r\n    \"telefono\": \"3016667555\",\r\n    \"contrasena\": \"123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/clientes"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-clientes",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contrasena\": \"100\",\r\n    \"estado\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/clientes/7"
+					},
+					"response": []
+				},
+				{
+					"name": "DELETE-clientes",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": "http://localhost:5000/neoris/api/clientes/8"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cuenta",
+			"item": [
+				{
+					"name": "DELETE-cuenta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"contrasena\": \"100\",\r\n    \"estado\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/cuentas/1"
+					},
+					"response": []
+				},
+				{
+					"name": "PUT-cuenta",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"numeroCuenta\": \"101010101010\",\r\n    \"tipoCuenta\": \"CA\",\r\n    \"estado\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/cuentas/2"
+					},
+					"response": []
+				},
+				{
+					"name": "POST-cuenta",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"numeroCuenta\": \"111122222\",\r\n    \"tipoCuenta\": \"CC\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/cuentas"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Movimientos",
+			"item": [
+				{
+					"name": "GET-moviminentoReporte",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"idCuenta\": 1,\r\n    \"tipoMovimiento\": \"DEB\",\r\n    \"valor\": 18002\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:5000/neoris/api/movimientos/reportes?fechaInicio=2018-11-12 01:02:03&fechaFin=2018-11-12 01:02:03&idCliente=8",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "5000",
+							"path": [
+								"neoris",
+								"api",
+								"movimientos",
+								"reportes"
+							],
+							"query": [
+								{
+									"key": "fechaInicio",
+									"value": "2018-11-12 01:02:03"
+								},
+								{
+									"key": "fechaFin",
+									"value": "2018-11-12 01:02:03"
+								},
+								{
+									"key": "idCliente",
+									"value": "8"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "100-POST-moviminento",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"idCliente\": 8,\r\n    \"idCuenta\": 1,\r\n    \"tipoMovimiento\": \"DEB\",\r\n    \"valor\": 36003\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "http://localhost:5000/neoris/api/movimientos"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

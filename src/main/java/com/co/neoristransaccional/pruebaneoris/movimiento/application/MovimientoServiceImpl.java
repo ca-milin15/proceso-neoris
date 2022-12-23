@@ -11,7 +11,6 @@ import com.co.neoristransaccional.pruebaneoris.cliente.application.ClienteServic
 import com.co.neoristransaccional.pruebaneoris.cuenta.application.CuentaService;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.Cuenta;
 import com.co.neoristransaccional.pruebaneoris.movimiento.domain.Movimiento;
-import com.co.neoristransaccional.pruebaneoris.movimiento.domain.MovimientoServiceCustomRepo;
 import com.co.neoristransaccional.pruebaneoris.movimiento.domain.MovimientoServiceRepository;
 import com.co.neoristransaccional.pruebaneoris.movimiento.domain.exceptions.MovimientoReglaNegocioRuntimeException;
 import com.co.neoristransaccional.pruebaneoris.movimiento.domain.exceptions.MovimientoReporteSinDatosRuntimeException;
@@ -25,16 +24,13 @@ public class MovimientoServiceImpl implements MovimientoService{
 	PropiedadesSistemas propiedadesSistemas;
 	ClienteService clienteService;
 	CuentaService cuentaService;
-	MovimientoServiceCustomRepo movimientoServiceCustomRepo;
 	
 	public MovimientoServiceImpl(MovimientoServiceRepository movimientoServiceRepository,
-			PropiedadesSistemas propiedadesSistemas, ClienteService clienteService, CuentaService cuentaService,
-			MovimientoServiceCustomRepo movimientoServiceCustomRepo) {
+			PropiedadesSistemas propiedadesSistemas, ClienteService clienteService, CuentaService cuentaService) {
 		this.movimientoServiceRepository = movimientoServiceRepository;
 		this.propiedadesSistemas = propiedadesSistemas;
 		this.clienteService = clienteService;
 		this.cuentaService = cuentaService;
-		this.movimientoServiceCustomRepo = movimientoServiceCustomRepo;
 	}
 
 	@Override
