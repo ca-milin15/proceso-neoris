@@ -1,0 +1,26 @@
+spring:
+  datasource:
+    url: "jdbc:mysql://localhost:3306/neoris-prueba?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC"
+    username: root
+    password:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect
+
+---
+
+mensajes-sistema:
+  excepciones:
+    cliente:
+      error-entidad-no-encontrada: "No se encontró cliente por el ID: %s" 
+      genero-no-encontrado: "El genero con el codigo: %s no fue encontrado." 
+      estado-no-valido: "El estado con el codigo: %s no es valido." 
+    cuenta:
+      error-entidad-no-encontrada: "No se encontró cuenta por el ID: %s" 
+      tipo-cuenta-no-encontrada: "El tipo de cuenta con el codigo: %s no fue encontrado." 
+      tipo-cuenta-error-integridad: "No se pudo realizar la transacción a debido a integridad de los datos." 
+    movimiento:
+      error-entidad-no-encontrada: "No se encontró movimiento por el ID: %s"
+      tipo-movimiento-no-encontrado: "El tipo de movimiento con el codigo: %s no fue encontrado." 
+      movimiento-no-disponible-sin-saldo: "Saldo no disponible. Su saldo es: %s, y está intentando debitar: %s" 
+      
