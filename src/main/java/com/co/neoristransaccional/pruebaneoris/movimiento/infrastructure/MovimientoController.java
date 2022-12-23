@@ -1,6 +1,7 @@
 package com.co.neoristransaccional.pruebaneoris.movimiento.infrastructure;
 
 import java.math.BigInteger;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import org.springframework.http.HttpStatus;
@@ -40,9 +41,9 @@ public class MovimientoController {
 
 	@GetMapping("reportes")
 	@ResponseStatus(value = HttpStatus.OK)
-	public ReporteMovimiento buscarPorId(@RequestParam("fechaInicio") LocalDateTime fechaInicio, 
-			@RequestParam("fechaFin") LocalDateTime fechaFin, 
+	public ReporteMovimiento buscarPorId(@RequestParam("fechaInicio") String fechaInicio,
+			@RequestParam("fechaFin") String fechaFin,
 			@RequestParam("idCliente") BigInteger idCliente) {
-		return movimientoService.reportes(fechaInicio, fechaFin, idCliente);
+		return movimientoService.reportes(Timestamp.valueOf(fechaInicio).toLocalDateTime(), Timestamp.valueOf(fechaFin).toLocalDateTime(), idCliente);
 	}
 }

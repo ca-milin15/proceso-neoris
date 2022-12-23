@@ -115,6 +115,15 @@ public class PropiedadesSistemas {
 			public String errorEntidadNoEncontrada;
 			public String tipoMovimientoNoEncontrado;
 			public String movimientoNoDisponibleSinSaldo;
+			public String movimientoReporteSinDatos;
+
+			public String getMovimientoReporteSinDatos() {
+				return movimientoReporteSinDatos;
+			}
+
+			public void setMovimientoReporteSinDatos(String movimientoReporteSinDatos) {
+				this.movimientoReporteSinDatos = movimientoReporteSinDatos;
+			}
 
 			public String getMovimientoNoDisponibleSinSaldo() {
 				return movimientoNoDisponibleSinSaldo;

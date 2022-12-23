@@ -6,6 +6,8 @@ public class ConverterTipoMovimiento implements AttributeConverter<TipoMovimient
 
 	@Override
 	public String convertToDatabaseColumn(TipoMovimientoEnum attribute) {
+		if(attribute == null)
+			return null;
 		return attribute.getCodigo();
 	}
 

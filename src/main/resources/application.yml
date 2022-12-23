@@ -6,6 +6,7 @@ spring:
     driver-class-name: com.mysql.cj.jdbc.Driver
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
+    show-sql: true
 
 ---
 
@@ -23,4 +24,5 @@ mensajes-sistema:
       error-entidad-no-encontrada: "No se encontró movimiento por el ID: %s"
       tipo-movimiento-no-encontrado: "El tipo de movimiento con el codigo: %s no fue encontrado." 
       movimiento-no-disponible-sin-saldo: "Saldo no disponible. Su saldo es: %s, y está intentando debitar: %s" 
+      movimiento-reporte-sin-datos: "No se encontró información de movimientos para el rango de fechas: %s y %s" 
       

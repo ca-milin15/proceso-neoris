@@ -1,6 +1,8 @@
 package com.co.neoristransaccional.pruebaneoris.movimiento.domain;
 
-import javax.persistence.Table;
+import jakarta.persistence.Table;
+
+import java.math.BigInteger;
 
 import com.co.neoristransaccional.pruebaneoris.cliente.domain.Cliente;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.Cuenta;
@@ -52,7 +54,9 @@ public class Movimiento  extends EntidadGeneral {
 	public Movimiento() {
 		super();
 	}
-	
+	public Movimiento(BigInteger cliente2, BigInteger cuenta2, Double saldo, Double saldoInicial, String tipoMov) {
+		System.out.println();
+	}
 	public Movimiento(Cliente cliente2, Cuenta cuenta2, MovimientoRequest movimientoRequest,
 			PropiedadesSistemas propiedadesSistemas) {
 		this.cliente = cliente2;
