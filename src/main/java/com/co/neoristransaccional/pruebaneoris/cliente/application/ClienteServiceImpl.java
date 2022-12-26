@@ -29,15 +29,15 @@ public class ClienteServiceImpl implements ClienteService{
 
 	@Override
 	public ClienteResponse crear(ClienteRequest clienteRequest) {
-		var persona = new Persona(clienteRequest, propiedadesSistemas);
-		var cliente = new Cliente(clienteRequest, persona);
-		var clienteGuardado = clienteServiceRepository.save(cliente);
+		Persona persona = new Persona(clienteRequest, propiedadesSistemas);
+		Cliente cliente = new Cliente(clienteRequest, persona);
+		Cliente clienteGuardado = clienteServiceRepository.save(cliente);
 		return new ClienteResponse(clienteGuardado);
 	}
 
 	@Override
 	public ClienteResponse actualizar(BigInteger id, ClienteRequest clienteRequest) {
-		var cliente = buscarClientePorId(id);
+		Cliente cliente = buscarClientePorId(id);
 		cliente.setContrasena(clienteRequest.getContrasena());
 		cliente.setEstado(EstadoEnum.buscarEnumPorCodigo(clienteRequest.getEstado(), propiedadesSistemas.getExcepciones().cliente.getEstadoNoValido()));
 		return new ClienteResponse(clienteServiceRepository.save(cliente));
@@ -51,7 +51,7 @@ public class ClienteServiceImpl implements ClienteService{
 	
 	@Override
 	public Boolean eliminar(BigInteger idCliente) {
-		var cliente = buscarClientePorId(idCliente);
+		Cliente cliente = buscarClientePorId(idCliente);
 		try {
 			clienteServiceRepository.delete(cliente);
 			return true;

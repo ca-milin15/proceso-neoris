@@ -34,7 +34,7 @@ public class ClienteServiceUnitTest {
 	@Test
 	//Invoca una sola vez el metodo de almacenar
 	void crearCliente() {
-		var clienteReq = crearObjetoClienteCrear();
+		ClienteRequest clienteReq = crearObjetoClienteCrear();
 		Mockito.when(clienteServiceRepositoryMock.save(any(com.co.neoristransaccional.pruebaneoris.cliente.domain.Cliente.class))).thenReturn(crearObjetoCliente());
 		clienteService.crear(clienteReq);
 		Mockito.verify(clienteServiceRepositoryMock, Mockito.times(1));

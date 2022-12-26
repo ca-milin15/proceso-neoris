@@ -5,6 +5,7 @@ import java.math.BigInteger;
 import org.springframework.stereotype.Service;
 
 import com.co.neoristransaccional.pruebaneoris.cliente.application.ClienteService;
+import com.co.neoristransaccional.pruebaneoris.cliente.domain.Cliente;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.Cuenta;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.CuentaServiceRepository;
 import com.co.neoristransaccional.pruebaneoris.cuenta.domain.exceptions.CuentaIntegrityErrorRuntimeException;
@@ -29,14 +30,14 @@ public class CuentaServiceImpl implements CuentaService {
 
 	@Override
 	public CuentaResponse crear(CuentaRequest cuentaRequest) {
-		var cliente = clienteService.buscarPorId(cuentaRequest.getIdCliente());
-		var cuenta = new Cuenta(cuentaRequest, cliente, propiedadesSistemas);
+		Cliente cliente = clienteService.buscarPorId(cuentaRequest.getIdCliente());
+		Cuenta cuenta = new Cuenta(cuentaRequest, cliente, propiedadesSistemas);
 		return new CuentaResponse(cuentaServiceRepository.save(cuenta));
 	}
 
 	@Override
 	public CuentaResponse actualizar(BigInteger id, CuentaRequest cuentaRequest) {
-		var cuenta = buscarCuentaPorId(id);
+		Cuenta cuenta = buscarCuentaPorId(id);
 		cuenta = actualizarAtributos(cuenta, cuentaRequest);
 		return new CuentaResponse(cuentaServiceRepository.save(cuenta));
 	}
@@ -56,7 +57,7 @@ public class CuentaServiceImpl implements CuentaService {
 	
 	@Override
 	public Boolean eliminar(BigInteger id) {
-		var cuenta = buscarCuentaPorId(id);
+		Cuenta cuenta = buscarCuentaPorId(id);
 		try {
 			cuentaServiceRepository.delete(cuenta);
 			return true;

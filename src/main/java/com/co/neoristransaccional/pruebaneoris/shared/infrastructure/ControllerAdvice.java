@@ -17,31 +17,31 @@ public class ControllerAdvice extends ResponseEntityExceptionHandler{
 
 	@ExceptionHandler(RuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> runtimeExceptionDefault(RuntimeException ex, WebRequest request){
-		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
+		ControllerAdviceResponse objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.CONFLICT);
 	}
 	
 	@ExceptionHandler(CuentaNotFoundRuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> cuentaNotFoundRuntimeException(RuntimeException ex, WebRequest request){
-		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
+		ControllerAdviceResponse objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.NOT_FOUND);
 	}
 	
 	@ExceptionHandler(ClienteNotFoundRuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> clienteNotFoundRuntimeException(RuntimeException ex, WebRequest request){
-		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
+		ControllerAdviceResponse objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.CONFLICT);
 	}
 	
 	@ExceptionHandler(GeneroEnumNotFoundRuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> generoEnumNotFound(RuntimeException ex, WebRequest request){
-		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
+		ControllerAdviceResponse objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.CONFLICT);
 	}
 	
 	@ExceptionHandler(MovimientoReporteSinDatosRuntimeException.class)
 	public ResponseEntity<ControllerAdviceResponse> movimientoReporteSinDatosRuntimeException(RuntimeException ex, WebRequest request){
-		var objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
+		ControllerAdviceResponse objetoRespuesta = new ControllerAdviceResponse(ex.getMessage());
 		return new ResponseEntity<>(objetoRespuesta, HttpStatus.NOT_FOUND);
 	}
 	
