@@ -4,6 +4,10 @@ import java.io.Serializable;
 import java.math.BigInteger;
 import java.time.LocalDateTime;
 
+import org.hibernate.annotations.CreationTimestamp;
+import org.springframework.data.annotation.CreatedDate;
+
+import jakarta.annotation.PostConstruct;
 import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -28,7 +32,7 @@ public class EntidadGeneral implements Serializable{
 	BigInteger id;
 	
 	@Column(name = "fecha")
-	LocalDateTime fecha;
+	LocalDateTime fecha = LocalDateTime.now();
 
 	public BigInteger getId() {
 		return id;

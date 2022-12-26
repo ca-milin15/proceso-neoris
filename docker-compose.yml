@@ -1,0 +1,27 @@
+version: '3'
+
+services:
+  docker-mysql:
+    restart: always
+    container_name: mysql
+    image: mysql
+    environment:
+      MYSQL_DATABASE: neoris-prueba
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_ROOT_HOST: 'root'
+    ports:
+      - "13306:3306"
+      
+  pruebaneoris-app:
+    depends_on:
+      - docker-mysql
+    build: ./
+    ports:
+      - 18080:5000
+    environment:
+      SPRING_APPLICATION_JSON: '{
+        "spring.datasource.url"  : "jdbc:mysql://docker-mysql:3306/neoris-prueba?allowPublicKeyRetrieval=true&useSSL=false",
+        "spring.datasource.username" : "root",
+        "spring.datasource.password" : "root",
+        "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL8Dialect"
+      }'
