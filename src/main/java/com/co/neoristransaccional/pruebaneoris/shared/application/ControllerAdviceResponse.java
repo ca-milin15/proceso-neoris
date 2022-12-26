@@ -1,11 +1,9 @@
 package com.co.neoristransaccional.pruebaneoris.shared.application;
 
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
-@AllArgsConstructor
 public class ControllerAdviceResponse {
 
 	String mensaje;

@@ -45,7 +45,4 @@ public class CuentaServiceUnitTest {
 		assertThatThrownBy(() -> cuentaService.eliminar(BigInteger.valueOf(1000L))).isInstanceOf(CuentaNotFoundRuntimeException.class);
 	}
 	
-	private CuentaRequest crearObjetoCuentaCrear() {
-		return new CuentaRequest(BigInteger.valueOf(8L), BigInteger.valueOf(23232L), "CA", 1);
-	}
 }

@@ -1,7 +1,5 @@
 package com.co.neoristransaccional.pruebaneoris.movimiento.domain;
 
-import jakarta.persistence.Table;
-
 import java.math.BigInteger;
 
 import com.co.neoristransaccional.pruebaneoris.cliente.domain.Cliente;
@@ -17,10 +15,9 @@ import jakarta.persistence.Convert;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.experimental.FieldDefaults;
 
@@ -29,8 +26,6 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "movimiento")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Movimiento  extends EntidadGeneral {
 	
 	private static final long serialVersionUID = -5986681911066094141L;

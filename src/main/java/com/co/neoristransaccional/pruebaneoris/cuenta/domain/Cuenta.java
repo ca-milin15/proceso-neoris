@@ -22,15 +22,11 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 import lombok.AccessLevel;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
 @FieldDefaults(level = AccessLevel.PRIVATE)
 @Entity
 @Table(name = "cuenta")
-@NoArgsConstructor
-@AllArgsConstructor
 public class Cuenta extends EntidadGeneral {
 
 	private static final long serialVersionUID = -5157897178717574325L;
