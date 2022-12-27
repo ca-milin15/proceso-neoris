@@ -25,3 +25,5 @@ services:
         "spring.datasource.password" : "root",
         "spring.jpa.properties.hibernate.dialect" : "org.hibernate.dialect.MySQL8Dialect"
       }'
+    volumes:
+      - .m2:/root/.m2

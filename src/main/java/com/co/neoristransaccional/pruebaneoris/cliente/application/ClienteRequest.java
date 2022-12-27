@@ -9,7 +9,7 @@ import lombok.experimental.FieldDefaults;
 public class ClienteRequest implements Serializable {
 
 	public ClienteRequest(String nombre, String genero, int edad, String identificacion, String direccion,
-			String telefono, String contrasena) {
+			String telefono, String contrasena, Integer estado) {
 		super();
 		this.nombre = nombre;
 		this.genero = genero;
@@ -18,6 +18,7 @@ public class ClienteRequest implements Serializable {
 		this.direccion = direccion;
 		this.telefono = telefono;
 		this.contrasena = contrasena;
+		this.estado = estado;
 	}
 	private static final long serialVersionUID = 7604324755192963598L;
 	
